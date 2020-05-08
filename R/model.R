@@ -42,7 +42,7 @@ train_prophet <- function(.data, specials, ...){
     mdl <- prophet::add_seasonality(
       mdl, name = season$name, period = season$period,
       fourier.order = season$order, prior.scale = season$prior_scale,
-      mode = season$type)
+      mode = season$type, condition.name = season$condition)
   }
 
   # Exogenous Regressors
